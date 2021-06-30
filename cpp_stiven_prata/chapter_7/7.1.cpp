@@ -1,17 +1,5 @@
-﻿/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   7.1.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: evgen <jonmd87@live.com>                   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:21:48 by evgen             #+#    #+#             */
-/*   Updated: 2021/06/01 16:21:52 by evgen            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <iostream>
-#include <climits>
+﻿#include <iostream>
+#include <cctype>
 
 using namespace				std;
 
@@ -58,11 +46,11 @@ int 							get_answer(int min, int max)
 
 int 							get_data(int *first, int *second)
 {
-	cout << "enter first number(or enter 0 for quit):" << endl;
+	cout << "enter first number:" << endl;
 	*first = get_answer(INT_MIN, INT_MAX);
 	if (*first == 0)
 		return (1);
-	cout << "enter second number(or enter 0 for quit):" << endl;
+	cout << "enter second number:" << endl;
 	*second = get_answer(INT_MIN, INT_MAX);
 	if (*second == 0)
 		return (1);

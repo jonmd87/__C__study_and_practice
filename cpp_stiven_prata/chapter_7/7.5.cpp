@@ -1,17 +1,4 @@
-﻿/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   7.5.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: evgen <jonmd87@live.com>                   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:21:22 by evgen             #+#    #+#             */
-/*   Updated: 2021/06/01 16:24:26 by evgen            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <iostream>
-#include <climits>
+﻿#include <iostream>
 
 using namespace				std;
 
@@ -111,8 +98,5 @@ void 						show_arr(double arr[], int max)
 	
 	ind = 0;
 	while (ind < max && arr[ind])
-	{
-		cout << ind + 1 << "t number [" << arr[ind] << "]\n";
-		ind++;
-	}
+		cout << ind + 1 << "t number [" << arr[ind++] << "]\n";
 }

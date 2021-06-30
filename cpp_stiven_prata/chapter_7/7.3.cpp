@@ -1,16 +1,4 @@
-﻿/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   7.3.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: evgen <jonmd87@live.com>                   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:22:15 by evgen             #+#    #+#             */
-/*   Updated: 2021/06/01 16:22:17 by evgen            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <iostream>
+﻿#include <iostream>
 #include <cstring>
 
 using namespace 				std;
@@ -19,11 +7,11 @@ const char					*name = "Bboxes";
 
 typedef struct					s_box{
 	char						maker[L];
-	double					height;
-	double					width;
-	double					lenth;
-	double					volume;
-}							t_box;
+	double						height;
+	double						width;
+	double						lenth;
+	double						volume;
+}								t_box;
 
 void							make_volume(t_box *box)
 {

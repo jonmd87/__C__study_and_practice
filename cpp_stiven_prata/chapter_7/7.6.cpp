@@ -5,7 +5,8 @@
 using namespace				std;
 
 const int						LEN = 30;
-const char						*message = "enter class size(only positive numbers, or [q] for quit):";
+const char                         *message = "enter class size(only positive numbers, or [q] for quit):";
+const char					*mess_posit_num = "only p9sitive numbers, or [q] for quit:";
 
 typedef struct					s_student {
 	char						name[LEN];
@@ -34,7 +35,12 @@ int							main(void)
 		if (std)
 		{
 			entered = get_info(std, size);
-			cout << "entered " << entered << " students" << endl;
+			for (int i = 0; i < entered; i++)
+			{
+				display1(std[i]);
+				display2(&std[i]);
+			}
+			display3(std, entered);
 		}
 	}
 	delete [] std;
@@ -61,6 +67,7 @@ int							get_number(const char *message)
 		cout << message << endl;
 		cin.ignore(INT_MAX, '\n');
 	}
+	cin.ignore(INT_MAX, '\n');
 	return (num);
 }
 
@@ -75,15 +82,11 @@ int 							get_info(t_student std[], int n)
 		if (get_str(std[entered].name) > 0)
 			return (entered);
 		cout << "now enter hobby of student " << std[entered].name << endl;
-		if (get_str(std[entered].name) > 0)
+		if (get_str(std[entered].hoby) > 0)
 			return (entered);
 		cout << "And in last enter level of OOP" << endl;
-		if (!(cin >> std[entered].oopLevel))
-		{
-			cin.clear();
-			cin.ignore(INT_MAX, '\n');
+		if ((std[entered].oopLevel = get_number(mess_posit_num)) == 0)
 			return (entered);
-		}
 		entered++;
 		cout << "OK, lets get data of another person" << endl;
 	}
@@ -92,12 +95,38 @@ int 							get_info(t_student std[], int n)
 
 int								get_str(char *str)
 {
-	cin >> str;
-	if (*str == '\n')
+	cin.getline(str, LEN);
+	if (*str == '\0')
 		return (1);
 	return (0);
 }
 
-void							display1(t_student st);
-void							display2(const t_student *st);
-void							display3(const t_student st[], int n);
+void							display1(t_student st)
+{
+	cout << "display1:\n";
+	cout << "   Name:		" << st.name << endl;
+	cout << "  Hobby:		" << st.hoby << endl;
+	cout << "OOP lvl:		" << st.oopLevel << endl << endl;	
+}
+void							display2(const t_student *st)
+{
+	cout << "\tdisplay2:\n";
+	cout << "\t   Name:		" << st->name << endl;
+	cout << "\t  Hobby:		" << st->hoby << endl;
+	cout << "\tOOP lvl:		" << st->oopLevel << endl << endl;	
+}
+void							display3(const t_student st[], int n)
+{
+	int 						ind;
+	
+	ind = 0;
+	while (ind < n)
+	{
+		cout << "display3:\n";
+		cout << "   Name:		" << st[ind].name << endl;
+		cout << "  Hobby:		" << st[ind].hoby << endl;
+		cout << "OOP lvl:		" << st[ind].oopLevel << endl << endl;
+		ind++;
+	}
+}
+;
