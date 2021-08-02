@@ -6,7 +6,7 @@
 /*   By: evgen <jonmd87@live.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:07:31 by evgen             #+#    #+#             */
-/*   Updated: 2021/08/02 19:51:43 by evgen            ###   ########.fr       */
+/*   Updated: 2021/08/02 20:17:57 by evgen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -25,7 +25,7 @@
 ** stack is described in a class, craft this class.
 ** Each customer must have own payment, when the program delete 
 ** an element from stack, the paymen of this elemen are adding to
-** common sume, and current sume must be show.
+** common sume, and current summ must be show.
 */
 
 #include <iostream>
